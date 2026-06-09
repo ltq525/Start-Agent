@@ -6,7 +6,7 @@
 - 负载均衡与路由
 
 注意: 这是概念性实现，用于学习和理解 ANP 理念。
-详见文档: docs/chapter10/ANP_CONCEPTS.md
+详见文档: docs/protocols/ANP_CONCEPTS.md
 """
 
 from typing import Optional, Dict, Any, List
@@ -73,4 +73,3 @@ __all__ = [
     "register_service",
     "discover_service",
 ]
-

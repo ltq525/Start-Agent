@@ -6,7 +6,7 @@
 - 多 Agent 协作
 
 注意: A2A 功能需要安装官方 SDK: pip install a2a
-详见文档: docs/chapter10/A2A_GUIDE.md
+详见文档: docs/protocols/A2A_GUIDE.md
 """
 
 # A2A 是可选的，需要安装官方 SDK
@@ -32,7 +32,7 @@ except ImportError as e:
             raise ImportError(
                 "A2A protocol requires the official 'a2a' library. "
                 "Install it with: pip install a2a\n"
-                "See docs/chapter10/A2A_GUIDE.md for more information."
+                "See docs/protocols/A2A_GUIDE.md for more information."
             )
     
     A2AServer = _A2ANotAvailable
@@ -52,4 +52,3 @@ def create_message(*args, **kwargs):
 def parse_message(*args, **kwargs):
     """解析 A2A 消息（占位符）"""
     raise ImportError("Please install a2a library: pip install a2a")
-

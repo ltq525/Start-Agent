@@ -373,7 +373,7 @@ class RAGTool(Tool):
                 
                 if include_citations and meta.get("heading_path"):
                     clean_heading = clean_text(str(meta['heading_path']))
-                    search_result.append(f"   章节: {clean_heading}")
+                    search_result.append(f"   标题路径: {clean_heading}")
             
             return "\n".join(search_result)
             

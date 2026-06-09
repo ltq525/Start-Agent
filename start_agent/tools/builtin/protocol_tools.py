@@ -533,7 +533,7 @@ class A2ATool(Tool):
         >>> result = tool.run({"action": "get_info"})
     
     注意：需要安装官方 a2a-sdk 库: pip install a2a-sdk
-    详见文档: docs/chapter10/A2A_GUIDE.md
+    详见文档: docs/protocols/A2A_GUIDE.md
     官方仓库: https://github.com/a2aproject/a2a-python
     """
     
@@ -572,12 +572,12 @@ class A2ATool(Tool):
             if not A2A_AVAILABLE:
                 return ("错误：需要安装 a2a-sdk 库\n"
                        "安装命令: pip install a2a-sdk\n"
-                       "详见文档: docs/chapter10/A2A_GUIDE.md\n"
+                       "详见文档: docs/protocols/A2A_GUIDE.md\n"
                        "官方仓库: https://github.com/a2aproject/a2a-python")
         except ImportError:
             return ("错误：无法导入 A2A 模块\n"
                    "安装命令: pip install a2a-sdk\n"
-                   "详见文档: docs/chapter10/A2A_GUIDE.md\n"
+                   "详见文档: docs/protocols/A2A_GUIDE.md\n"
                    "官方仓库: https://github.com/a2aproject/a2a-python")
 
         action = parameters.get("action", "").lower()
@@ -661,7 +661,7 @@ class ANPTool(Tool):
         ... })
     
     注意：这是概念性实现，不需要额外依赖
-    详见文档: docs/chapter10/ANP_CONCEPTS.md
+    详见文档: docs/protocols/ANP_CONCEPTS.md
     """
     
     def __init__(self, name: str = "anp", description: str = None, discovery=None, network=None):
@@ -848,4 +848,3 @@ class ANPTool(Tool):
                 required=False
             )
         ]
-
