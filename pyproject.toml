@@ -8,7 +8,7 @@ version = "1.0.0"
 description = "A Python Agent framework for multi-model access, tool calling, RAG, context engineering, evaluation, and Agentic RL."
 readme = "README.md"
 requires-python = ">=3.10"
-license = { file = "LICENSE" }
+license = "MIT"
 authors = [
     { name = "ltq525", email = "ltq525.email@gmail.com" }
 ]
@@ -25,7 +25,6 @@ classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
@@ -112,4 +111,3 @@ exclude = ["tests*"]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 addopts = "-q"
-

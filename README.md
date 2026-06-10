@@ -1,8 +1,49 @@
 # StartAgent
 
+[![PyPI version](https://img.shields.io/pypi/v/start-agent.svg)](https://pypi.org/project/start-agent/)
+[![Python versions](https://img.shields.io/pypi/pyversions/start-agent.svg)](https://pypi.org/project/start-agent/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 StartAgent 是一个灵活、可扩展的多智能体框架，基于 OpenAI 兼容接口构建，面向 Agent 开发、工具调用、记忆管理、协议适配、自动评测和强化学习训练等场景。
 
 当前版本为 `1.0.0`。
+
+## 安装
+
+从 PyPI 安装稳定版本：
+
+```bash
+pip install start-agent
+```
+
+按需安装扩展能力：
+
+```bash
+pip install "start-agent[search]"
+pip install "start-agent[memory]"
+pip install "start-agent[protocols]"
+pip install "start-agent[rl]"
+```
+
+一次性安装常用扩展：
+
+```bash
+pip install "start-agent[all]"
+```
+
+从源码开发：
+
+```bash
+git clone https://github.com/ltq525/Start-Agent.git
+cd Start-Agent
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+pip install -e ".[dev]"
+```
+
+安装后使用 `start_agent` 作为 Python 导入名。
 
 ## 核心能力
 
@@ -206,7 +247,7 @@ print(tool.run({
 - Python 3.10+
 - 推荐使用虚拟环境
 
-完整环境配置请参考 [ENVIRONMENT.md](ENVIRONMENT.md)。基础安装方式：
+完整环境配置请参考 [ENVIRONMENT.md](ENVIRONMENT.md)。如果使用源码开发，基础安装方式：
 
 ```bash
 python -m venv .venv
@@ -216,7 +257,7 @@ pip install -r requirements.txt
 pip install -e ".[dev]"
 ```
 
-如果使用记忆、搜索、协议或 RL 模块，可以按需安装 extras：
+如果使用源码开发并需要记忆、搜索、协议或 RL 模块，可以按需安装 extras：
 
 ```bash
 pip install -e ".[search]"
