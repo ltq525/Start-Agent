@@ -27,7 +27,8 @@ python -m pip install --upgrade pip
 基础依赖：
 
 ```bash
-pip install openai pydantic requests pytest
+pip install -r requirements.txt
+pip install -e ".[dev]"
 ```
 
 ## 可选依赖
@@ -35,20 +36,19 @@ pip install openai pydantic requests pytest
 ### 记忆、RAG 和上下文构建
 
 ```bash
-pip install numpy python-dotenv qdrant-client neo4j tiktoken
+pip install -e ".[memory]"
 ```
 
 ### 搜索工具
 
 ```bash
-pip install markdownify ddgs tavily-python google-search-results
+pip install -e ".[search]"
 ```
 
 ### 协议适配
 
 ```bash
-pip install fastmcp
-pip install a2a-sdk
+pip install -e ".[protocols]"
 ```
 
 ANP 当前是概念性实现，默认不要求额外依赖。
@@ -56,7 +56,7 @@ ANP 当前是概念性实现，默认不要求额外依赖。
 ### Agentic RL
 
 ```bash
-pip install huggingface_hub datasets transformers trl accelerate torch tensorboard
+pip install -e ".[rl]"
 ```
 
 RL 训练会下载模型和数据集，建议使用独立环境，并优先用小模型、小样本验证流程。

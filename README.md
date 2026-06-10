@@ -89,6 +89,8 @@ start_agent/
 tests/           基础烟测
 .env.example     环境变量示例
 ENVIRONMENT.md   环境配置导向
+pyproject.toml   Python 包与可选依赖配置
+requirements.txt 基础运行依赖清单
 ```
 
 ## 模块关系
@@ -204,20 +206,29 @@ print(tool.run({
 - Python 3.10+
 - 推荐使用虚拟环境
 
-完整环境配置请参考 [ENVIRONMENT.md](ENVIRONMENT.md)。项目当前没有提供 `pyproject.toml` 或 `requirements.txt`，可以先按需安装基础依赖：
+完整环境配置请参考 [ENVIRONMENT.md](ENVIRONMENT.md)。基础安装方式：
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-pip install openai pydantic requests pytest
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+pip install -e ".[dev]"
 ```
 
-如果使用记忆、搜索、评测、协议或 RL 模块，可能还需要安装以下可选依赖：
+如果使用记忆、搜索、协议或 RL 模块，可以按需安装 extras：
 
 ```bash
-pip install numpy python-dotenv qdrant-client neo4j tiktoken fastmcp
-pip install markdownify ddgs tavily-python google-search-results
-pip install huggingface_hub datasets transformers trl accelerate torch tensorboard
+pip install -e ".[search]"
+pip install -e ".[memory]"
+pip install -e ".[protocols]"
+pip install -e ".[rl]"
+```
+
+也可以一次性安装常用扩展：
+
+```bash
+pip install -e ".[all]"
 ```
 
 > 说明：不同模块依赖不同，建议按实际使用的能力分批安装依赖。详细的场景依赖、环境变量和安全注意事项见 [ENVIRONMENT.md](ENVIRONMENT.md)。

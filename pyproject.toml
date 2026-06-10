@@ -1,0 +1,115 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "start-agent"
+version = "1.0.0"
+description = "A Python Agent framework for multi-model access, tool calling, RAG, context engineering, evaluation, and Agentic RL."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+    { name = "ltq525", email = "ltq525.email@gmail.com" }
+]
+keywords = [
+    "agent",
+    "llm",
+    "rag",
+    "tool-calling",
+    "evaluation",
+    "reinforcement-learning",
+    "agentic-rl"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "openai>=1.0.0",
+    "pydantic>=2.0.0,<3.0.0",
+    "requests>=2.31.0",
+    "numpy>=1.24.0",
+    "python-dotenv>=1.0.0",
+    "huggingface-hub>=0.20.0",
+]
+
+[project.optional-dependencies]
+search = [
+    "markdownify>=0.11.0",
+    "ddgs>=9.0.0",
+    "tavily-python>=0.5.0",
+    "google-search-results>=2.4.0",
+]
+memory = [
+    "qdrant-client>=1.6.0",
+    "neo4j>=5.0.0",
+    "tiktoken>=0.5.0",
+    "scikit-learn>=1.3.0",
+    "sentence-transformers>=2.2.0",
+    "dashscope>=1.17.0",
+]
+protocols = [
+    "fastmcp>=2.0.0",
+    "a2a-sdk>=0.3.0",
+]
+rl = [
+    "datasets>=2.14.0",
+    "transformers>=4.40.0",
+    "trl>=0.9.0",
+    "accelerate>=0.30.0",
+    "torch>=2.1.0",
+    "tensorboard>=2.15.0",
+]
+dev = [
+    "pytest>=7.0.0",
+    "build>=1.0.0",
+]
+all = [
+    "markdownify>=0.11.0",
+    "ddgs>=9.0.0",
+    "tavily-python>=0.5.0",
+    "google-search-results>=2.4.0",
+    "qdrant-client>=1.6.0",
+    "neo4j>=5.0.0",
+    "tiktoken>=0.5.0",
+    "scikit-learn>=1.3.0",
+    "sentence-transformers>=2.2.0",
+    "dashscope>=1.17.0",
+    "fastmcp>=2.0.0",
+    "a2a-sdk>=0.3.0",
+    "datasets>=2.14.0",
+    "transformers>=4.40.0",
+    "trl>=0.9.0",
+    "accelerate>=0.30.0",
+    "torch>=2.1.0",
+    "tensorboard>=2.15.0",
+    "pytest>=7.0.0",
+    "build>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/ltq525/Start-Agent"
+Repository = "https://github.com/ltq525/Start-Agent"
+Issues = "https://github.com/ltq525/Start-Agent/issues"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["start_agent*"]
+exclude = ["tests*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-q"
+
