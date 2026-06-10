@@ -87,6 +87,8 @@ start_agent/
   context/       上下文构建工具
   utils/         日志、序列化和辅助函数
 tests/           基础烟测
+.env.example     环境变量示例
+ENVIRONMENT.md   环境配置导向
 ```
 
 ## 模块关系
@@ -202,7 +204,7 @@ print(tool.run({
 - Python 3.10+
 - 推荐使用虚拟环境
 
-项目当前没有提供 `pyproject.toml` 或 `requirements.txt`，可以先按需安装基础依赖：
+完整环境配置请参考 [ENVIRONMENT.md](ENVIRONMENT.md)。项目当前没有提供 `pyproject.toml` 或 `requirements.txt`，可以先按需安装基础依赖：
 
 ```bash
 python -m venv .venv
@@ -218,7 +220,7 @@ pip install markdownify ddgs tavily-python google-search-results
 pip install huggingface_hub datasets transformers trl accelerate torch tensorboard
 ```
 
-> 说明：不同模块依赖不同，建议按实际使用的能力分批安装依赖，避免 RL、评测、向量库等重型依赖污染轻量开发环境。
+> 说明：不同模块依赖不同，建议按实际使用的能力分批安装依赖。详细的场景依赖、环境变量和安全注意事项见 [ENVIRONMENT.md](ENVIRONMENT.md)。
 
 ## 配置
 
@@ -259,6 +261,8 @@ export PERPLEXITY_API_KEY="..."
 ```
 
 请不要将 `.env` 或任何 API Key 提交到公开仓库。
+
+更多 LLM、搜索、Qdrant、Neo4j、Embedding、Agentic RL 和 GitHub Token 配置请参考 [ENVIRONMENT.md](ENVIRONMENT.md)。
 
 ## 快速开始
 
