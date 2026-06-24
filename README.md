@@ -134,6 +134,14 @@ pyproject.toml   Python 包与可选依赖配置
 requirements.txt 基础运行依赖清单
 ```
 
+## 模块文档
+
+- [记忆系统](start_agent/memory/README.md)
+- [上下文工程](start_agent/context/README.md)
+- [评估模块](start_agent/evaluation/README.md)
+- [协议模块](start_agent/protocols/README.md)
+- [强化学习模块](start_agent/rl/README.md)
+
 ## 模块关系
 
 ```mermaid
@@ -400,6 +408,15 @@ pytest
 ## 声明
 
 本项目按现状提供，示例代码和工具调用结果仅用于学习、研究和工程实验。使用第三方模型、搜索服务、向量数据库或评测数据集时，请遵守对应服务商、数据集和开源组件的许可协议、使用条款及隐私要求。
+
+## 补充说明
+
+本项目是对 GitHub 上 `hello-agents` 使用时常见 bug 的完整性修复。
+
+## Reference Links
+
+1. [Datawhalechina/hello-agents](https://github.com/datawhalechina/hello-agents)
+2. [Claude-code-from-scratch](https://github.com/Windy3f3f3f3f/claude-code-from-scratch)
 
 ## 许可证
 
